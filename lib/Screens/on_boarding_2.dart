@@ -1,41 +1,35 @@
-import 'package:financ_app/Screens/on_boarding_2.dart';
+import 'package:financ_app/Screens/on_boarding_3.dart';
 import 'package:flutter/material.dart';
 
-class on_boarding_1 extends StatefulWidget {
-  const on_boarding_1({super.key});
+class on_boarding_2 extends StatelessWidget {
+  const on_boarding_2({super.key});
 
-  @override
-  State<on_boarding_1> createState() => _on_boarding_1State();
-}
-
-class _on_boarding_1State extends State<on_boarding_1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        // title: const Text(
-        //   'FinControl',
-        //   style: TextStyle(
-        //     color: Colors.blue,
-        //     fontSize: 20,
-        //     fontWeight: FontWeight.bold,
-        //   ),
-        // ),
+        title: const Text(
+          'FinControl',
+          style: TextStyle(
+            color: Colors.blue,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         actions: [
           TextButton(
             onPressed: () {
               // Navigate to the next screen when "Skip" is pressed
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const on_boarding_1()),
+                MaterialPageRoute(builder: (context) => const on_boarding_2()),
               );
             },
             child: const Text('Skip', style: TextStyle(color: Colors.black)),
           ),
         ],
       ),
-
       body: Center(
         child: Column(
           children: [
@@ -63,12 +57,12 @@ class _on_boarding_1State extends State<on_boarding_1> {
             ),
             SizedBox(height: 20),
             Text(
-              'Track Your Spending \n        Effortlessly',
+              'Stay WithIn Your Budget',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
             Text(
-              'Automatically Categorize And track every \n transaction in real time.',
+              'Set monthly Limits for categories and get \n notified before you overspend.',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, color: Colors.grey[600]),
             ),
@@ -81,7 +75,7 @@ class _on_boarding_1State extends State<on_boarding_1> {
                   height: 10,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.blue, // Active dot color
+                    color: Colors.grey, // Active dot color
                   ),
                 ),
                 SizedBox(width: 8),
@@ -90,7 +84,7 @@ class _on_boarding_1State extends State<on_boarding_1> {
                   height: 10,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.grey, // Inactive dot color
+                    color: Colors.blue, // Inactive dot color
                   ),
                 ),
                 SizedBox(width: 8),
@@ -104,36 +98,34 @@ class _on_boarding_1State extends State<on_boarding_1> {
                 ),
               ],
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 60),
             Container(
               width: MediaQuery.of(context).size.width * 0.8,
               height: 50,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
                 color: Colors.blue,
+                borderRadius: const BorderRadius.all(Radius.circular(20)),
               ),
-              child: Center(
-                child: TextButton(
-                  onPressed: () {
-                    // Navigate to the next screen when "Next" is pressed
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const on_boarding_2(),
-                      ),
-                    );
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Next",
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      ),
-                      SizedBox(width: 8),
-                      Icon(Icons.arrow_forward, color: Colors.white),
-                    ],
-                  ),
+              child: TextButton(
+                onPressed: () {
+                  // Navigate to the next screen when "Next" is pressed
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const on_boarding_3(),
+                    ),
+                  );
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Next',
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                    const SizedBox(width: 8),
+                    Icon(Icons.arrow_forward, color: Colors.white),
+                  ],
                 ),
               ),
             ),
