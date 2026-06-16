@@ -1,4 +1,8 @@
+import 'package:financ_app/widgets/action_card.dart';
+import 'package:financ_app/widgets/stat_card.dart';
+import 'package:financ_app/widgets/transaction_card.dart';
 import 'package:flutter/material.dart';
+import 'package:financ_app/Bottom_nav/Bottom_Nav.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -11,28 +15,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.receipt_long),
-            label: "Transactions",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.analytics),
-            label: "Analytics",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance_wallet),
-            label: "Budgets",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: "Profile",
-          ),
-        ],
-      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(15),
@@ -111,87 +93,87 @@ class _HomeState extends State<Home> {
 
               const SizedBox(height: 20),
 
-              /// Income Expense
-              // Row(
-              //   children: [
-              //     Expanded(
-              //       child: _statCard(
-              //         "Income",
-              //         "\$5,240",
-              //         Icons.arrow_downward,
-              //         Colors.green,
-              //       ),
-              //     ),
+              // / Income Expense
+              Row(
+                children: [
+                  Expanded(
+                    child: Statcard(
+                      "Income",
+                      "\$5,240",
+                      Icons.arrow_downward,
+                      Colors.green,
+                    ),
+                  ),
 
-              //     const SizedBox(width: 12),
+                  const SizedBox(width: 12),
 
-              //     Expanded(
-              //       child: _statCard(
-              //         "Expense",
-              //         "\$2,184",
-              //         Icons.arrow_upward,
-              //         Colors.red,
-              //       ),
-              //     ),
-              //   ],
-              // ),
+                  Expanded(
+                    child: Statcard(
+                      "Expense",
+                      "\$2,184",
+                      Icons.arrow_upward,
+                      Colors.red,
+                    ),
+                  ),
+                ],
+              ),
 
-              // const SizedBox(height: 25),
+              const SizedBox(height: 25),
 
-              // const Text(
-              //   "Quick Actions",
-              //   style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-              // ),
+              const Text(
+                "Quick Actions",
+                style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+              ),
 
-              // const SizedBox(height: 15),
+              const SizedBox(height: 15),
 
-              // /// Quick Actions
-              // Row(
-              //   children: [
-              //     Expanded(child: _actionCard(Icons.add_circle_outline, "Add")),
-              //     const SizedBox(width: 10),
+              /// Quick Actions
+              Row(
+                children: [
+                  Expanded(child: Actioncard(Icons.add_circle_outline, "Add")),
+                  const SizedBox(width: 10),
 
-              //     Expanded(child: _actionCard(Icons.send, "Send")),
+                  Expanded(child: Actioncard(Icons.send, "Send")),
 
-              //     const SizedBox(width: 10),
+                  const SizedBox(width: 10),
 
-              //     Expanded(child: _actionCard(Icons.receipt_long, "Bills")),
-              //   ],
-              // ),
+                  Expanded(child: Actioncard(Icons.receipt_long, "Bills")),
+                ],
+              ),
 
-              // const SizedBox(height: 30),
+              const SizedBox(height: 30),
 
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children: [
-              //     const Text(
-              //       "Recent Transactions",
-              //       style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              //     ),
-              //     TextButton(onPressed: () {}, child: const Text("See All")),
-              //   ],
-              // ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Recent Transactions",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  TextButton(onPressed: () {}, child: const Text("See All")),
+                ],
+              ),
 
-              // _transactionCard(
-              //   "Apple Store",
-              //   "Electronics • 2h ago",
-              //   "-\$999.00",
-              //   Colors.red,
-              // ),
+              Transaction_card(
+                "Apple Store",
+                "Electronics • 2h ago",
+                "-\$999.00",
+                Colors.red,
+              ),
 
-              // _transactionCard(
-              //   "Blue Ginger",
-              //   "Dining • Yesterday",
-              //   "-\$42.50",
-              //   Colors.red,
-              // ),
+              Transaction_card(
+                "Blue Ginger",
+                "Dining • Yesterday",
+                "-\$42.50",
+                Colors.red,
+              ),
 
-              // _transactionCard(
-              //   "Salary Deposit",
-              //   "Income • 2 days ago",
-              //   "+\$4,200.00",
-              //   Colors.green,
-              // ),
+              Transaction_card(
+                "Salary Deposit",
+                "Income • 2 days ago",
+                "+\$4,200.00",
+                Colors.green,
+              ),
             ],
           ),
         ),

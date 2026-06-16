@@ -1,5 +1,5 @@
 import 'package:financ_app/Screens/Forgot_pass.dart';
-import 'package:financ_app/SignUp.dart';
+import 'package:financ_app/Screens/SignUp.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {

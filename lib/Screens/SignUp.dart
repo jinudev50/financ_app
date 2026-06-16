@@ -1,6 +1,8 @@
+import 'package:financ_app/Bottom_nav/Bottom_Nav.dart';
+import 'package:financ_app/Screens/Home.dart';
 import 'package:financ_app/Screens/Login.dart';
 import 'package:flutter/material.dart';
-import 'Utilites/SignUp_textfield.dart';
+import '../Utilites/SignUp_textfield.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -88,7 +90,9 @@ class _SignupState extends State<Signup> {
                       // Navigate to the next screen when "Next" is pressed
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Signup()),
+                        MaterialPageRoute(
+                          builder: (context) => const BottomNav(),
+                        ),
                       );
                     },
                     child: Row(
