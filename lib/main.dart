@@ -1,4 +1,5 @@
 import 'package:financ_app/Screens/Splash_Screen.dart';
+import 'package:financ_app/Screens/Transaction.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: SplashScreen(),
+      home: Transaction(),
     );
   }
 }

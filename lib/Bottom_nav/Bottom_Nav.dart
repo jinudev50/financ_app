@@ -60,7 +60,7 @@ class _BottomNavState extends State<BottomNav> {
           ),
         ],
       ),
-      body: IndexedStack(children: Pages, index: currentindex),
+      body: IndexedStack(index: currentindex, children: Pages),
     );
   }
 }

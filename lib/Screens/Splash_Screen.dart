@@ -1,6 +1,5 @@
 import 'package:financ_app/Screens/on_boardiing_1.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

@@ -1,5 +1,4 @@
 import 'package:financ_app/Bottom_nav/Bottom_Nav.dart';
-import 'package:financ_app/Screens/Home.dart';
 import 'package:financ_app/Screens/Login.dart';
 import 'package:flutter/material.dart';
 import '../Utilites/SignUp_textfield.dart';
@@ -111,7 +110,7 @@ class _SignupState extends State<Signup> {
 
                 const SizedBox(height: 8),
                 const Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  padding: EdgeInsets.only(left: 20, right: 20),
                   child: Divider(height: 2),
                 ),
                 const SizedBox(height: 10),

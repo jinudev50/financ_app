@@ -2,7 +2,6 @@ import 'package:financ_app/widgets/action_card.dart';
 import 'package:financ_app/widgets/stat_card.dart';
 import 'package:financ_app/widgets/transaction_card.dart';
 import 'package:flutter/material.dart';
-import 'package:financ_app/Bottom_nav/Bottom_Nav.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -28,6 +27,7 @@ class _HomeState extends State<Home> {
                     radius: 22,
                     backgroundImage: AssetImage("assets/images/profile.jpg"),
                   ),
+
                   const SizedBox(width: 12),
 
                   const Expanded(

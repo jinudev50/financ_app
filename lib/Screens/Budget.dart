@@ -11,6 +11,5 @@ class _BudgetState extends State<Budget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: Center(child: Text('Budget Page')));
-    ;
   }
 }
