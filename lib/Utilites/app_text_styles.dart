@@ -20,4 +20,10 @@ class AppTextStyles {
     fontWeight: FontWeight.bold,
     color: Colors.white,
   );
+
+  static const TextStyle bigHeading = TextStyle(
+    fontSize: 40,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
 }

@@ -1,3 +1,4 @@
+import 'package:financ_app/Screens/Transaction_detail.dart';
 import 'package:flutter/material.dart';
 
 class AddTransaction extends StatefulWidget {
@@ -45,12 +46,25 @@ class _AddTransactionPageState extends State<AddTransactionPage> {
 
   String selectedCategory = "Shopping";
 
+  // Future<void> _pickDate() async {
+  //   final DateTime? picked = await showDatePicker(
+  //     context: context,
+  //     initialDate: selectedDate,
+  //     firstDate: DateTime(2020),
+  //     lastDate: DateTime(2030),
+  //   );
+  //   if (picked != null && picked != selectedDate) {
+  //     setState(() {
+  //       selectedDate = picked;
+  //     });
+  //   }
+  // }
   Future<void> _pickDate() async {
     final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: selectedDate,
-      firstDate: DateTime(2020),
-      lastDate: DateTime(2030),
+      firstDate: DateTime(1950),
+      lastDate: DateTime(2050),
     );
     if (picked != null && picked != selectedDate) {
       setState(() {
@@ -185,7 +199,8 @@ class _AddTransactionPageState extends State<AddTransactionPage> {
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    "${selectedDate.day}-${selectedDate.month}-${selectedDate.year}",
+                    // "${selectedDate.day}-${selectedDate.month}-${selectedDate.year}",
+                    "${selectedDate.day}-${selectedDate.month}-${selectedDate.year},",
                   ),
                   const Spacer(),
                   TextButton(
@@ -204,13 +219,21 @@ class _AddTransactionPageState extends State<AddTransactionPage> {
             ),
             const SizedBox(height: 10),
 
-            TextField(
-              controller: notesController,
-              decoration: const InputDecoration(
-                hintText: "Add a description...",
-                border: OutlineInputBorder(),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: const Color.fromARGB(255, 238, 236, 236),
+                border: Border.all(color: Colors.white),
               ),
-              maxLines: 2,
+              child: TextField(
+                controller: notesController,
+                decoration: const InputDecoration(
+                  hintText: "Add a description...",
+                  border: OutlineInputBorder(),
+                ),
+                maxLines: 3,
+              ),
             ),
 
             const SizedBox(height: 30),
@@ -232,9 +255,17 @@ class _AddTransactionPageState extends State<AddTransactionPage> {
                   backgroundColor: Colors.blue,
                   padding: const EdgeInsets.symmetric(vertical: 16),
                 ),
-                child: const Text(
-                  "Save Transaction",
-                  style: TextStyle(fontSize: 18),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => TransactionDetail()),
+                    );
+                  },
+                  child: const Text(
+                    "Save Transaction",
+                    style: TextStyle(fontSize: 18),
+                  ),
                 ),
               ),
             ),
