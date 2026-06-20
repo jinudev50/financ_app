@@ -42,151 +42,160 @@ class _TransactionDetailState extends State<TransactionDetail> {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Center(
-          child: Column(
-            children: [
-              Image(image: AssetImage('assets/images/Transaction.png')),
-              SizedBox(height: 15),
-              Text(
-                'Groceries & Essentials',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                  color: Colors.grey,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text('-124.50', style: AppTextStyles.bigHeading),
-              SizedBox(height: 10),
-              Chip(
-                backgroundColor: Colors.green.shade100,
-                avatar: const CircleAvatar(
-                  backgroundColor: Colors.green,
-                  child: Icon(Icons.check, size: 14, color: Colors.white),
-                ),
-                label: const Text(
-                  "Completed",
-                  style: TextStyle(
-                    color: Colors.green,
-                    fontWeight: FontWeight.w500,
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(
+              child: Column(
+                children: [
+                  Image(image: AssetImage('assets/images/Transaction.png')),
+                  SizedBox(height: 15),
+                  Text(
+                    'Groceries & Essentials',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      color: Colors.grey,
+                    ),
                   ),
-                ),
-              ),
-              SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Appcolor.background,
+                  SizedBox(height: 10),
+                  Text('-124.50', style: AppTextStyles.bigHeading),
+                  SizedBox(height: 10),
+                  Chip(
+                    backgroundColor: Colors.green.shade100,
+                    avatar: const CircleAvatar(
+                      backgroundColor: Colors.green,
+                      child: Icon(Icons.check, size: 14, color: Colors.white),
+                    ),
+                    label: const Text(
+                      "Completed",
+                      style: TextStyle(
+                        color: Colors.green,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   ),
-                  child: Padding(
+                  SizedBox(height: 10),
+                  Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        ListView.separated(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemCount: TranscationDetails.length,
-                          separatorBuilder: (context, index) =>
-                              const Divider(height: 20),
-
-                          itemBuilder: (context, index) {
-                            return Row(
-                              children: [
-                                Text(
-                                  TranscationDetails[index]['title'],
-                                  style: const TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 15,
-                                  ),
-                                ),
-                                const Spacer(),
-                                Text(
-                                  TranscationDetails[index]['Value'],
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            );
-                          },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Appcolor.background,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            ListView.separated(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: TranscationDetails.length,
+                              separatorBuilder: (context, index) =>
+                                  const Divider(height: 20),
+                              itemBuilder: (context, index) {
+                                return Row(
+                                  children: [
+                                    Text(
+                                      TranscationDetails[index]['title'],
+                                      style: const TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                    const Spacer(),
+                                    Text(
+                                      TranscationDetails[index]['Value'],
+                                      style: const TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
-                ),
-              ),
-              const SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Notes",
-                  style: TextStyle(
-                    color: Colors.grey.shade700,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 10),
-
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: const Text(
-                  'Weekly grocery run at Whole Foods. \n Includes ingredients for the \n weekend dinner party and \nhousehold supplies.',
-                ),
-              ),
-
-              SizedBox(height: 10),
-
-              Container(
-                height: 50,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.grey.shade200,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.edit),
-                    SizedBox(width: 10),
-                    Text('Edit Transaction'),
-                  ],
-                ),
-              ),
-              SizedBox(height: 10),
-              Container(
-                height: 50,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.white10,
-                  border: Border.all(color: Colors.red),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.delete_forever_outlined),
-                    SizedBox(width: 10),
-                    Text(
-                      'Delete Transaction',
-                      style: TextStyle(color: Colors.red),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Notes",
+                      style: TextStyle(
+                        color: Colors.grey.shade700,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+
+                  const SizedBox(height: 10),
+
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Text(
+                      'Weekly grocery run at Whole Foods. \n Includes ingredients for the \n weekend dinner party and \nhousehold supplies.',
+                    ),
+                  ),
+
+                  SizedBox(height: 10),
+
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      height: 50,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.grey.shade200,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.edit),
+                          SizedBox(width: 10),
+                          Text('Edit Transaction'),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      height: 50,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.white10,
+                        border: Border.all(color: Colors.red),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.delete_forever_outlined),
+                          SizedBox(width: 10),
+                          Text(
+                            'Delete Transaction',
+                            style: TextStyle(color: Colors.red),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

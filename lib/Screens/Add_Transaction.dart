@@ -1,3 +1,4 @@
+import 'package:financ_app/Screens/Transaction.dart';
 import 'package:financ_app/Screens/Transaction_detail.dart';
 import 'package:flutter/material.dart';
 
@@ -46,19 +47,6 @@ class _AddTransactionPageState extends State<AddTransactionPage> {
 
   String selectedCategory = "Shopping";
 
-  // Future<void> _pickDate() async {
-  //   final DateTime? picked = await showDatePicker(
-  //     context: context,
-  //     initialDate: selectedDate,
-  //     firstDate: DateTime(2020),
-  //     lastDate: DateTime(2030),
-  //   );
-  //   if (picked != null && picked != selectedDate) {
-  //     setState(() {
-  //       selectedDate = picked;
-  //     });
-  //   }
-  // }
   Future<void> _pickDate() async {
     final DateTime? picked = await showDatePicker(
       context: context,
@@ -77,7 +65,28 @@ class _AddTransactionPageState extends State<AddTransactionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Center(child: const Text("Add Transaction"))),
+      appBar: AppBar(
+        title: Center(
+          child: const Text(
+            "Add Transaction",
+            style: TextStyle(
+              color: Colors.blue,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        automaticallyImplyActions: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => Transaction()),
+            );
+          },
+          icon: Icon(Icons.arrow_back_ios, color: Colors.blue),
+        ),
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
