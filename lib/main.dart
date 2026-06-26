@@ -1,4 +1,5 @@
-import 'package:financ_app/Bottom_nav/Bottom_Nav.dart';
+import 'package:financ_app/Screens/Splash_Screen.dart';
+import 'package:financ_app/widgets/Budget_Card.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -37,7 +38,7 @@ class _MyAppState extends State<MyApp> {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Color(0xffF5F6FA)),
       ),
-      home: BottomNav(),
+      home: SplashScreen(),
     );
   }
 }
