@@ -1,7 +1,11 @@
 import 'package:financ_app/Screens/Splash_Screen.dart';
+import 'package:financ_app/Services/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -128,3 +132,12 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+// import 'package:firebase_core/firebase_core.dart';
+// import 'firebase_options.dart';
+
+// // ...
+
+// await Firebase.initializeApp(
+//     options: DefaultFirebaseOptions.currentPlatform,
+// );
